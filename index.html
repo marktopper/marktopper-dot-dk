@@ -1,29 +1,20 @@
-<?php
-if (extension_loaded('newrelic')) {
-  newrelic_set_appname('marktopper.dk');
-}
-
-$birthDate = "08/08/1991";
-$birthDate = explode("/", $birthDate);
-$age = (date("md", date("U", mktime(0, 0, 0, $birthDate[0], $birthDate[1], $birthDate[2]))) > date("md") ? ((date("Y")-$birthDate[2])-1):(date("Y")-$birthDate[2]));
-?>
 <!DOCTYPE html>
 <html lang="da" class="wf-sourcesanspro-n3-active wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="manifest.json">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
@@ -39,6 +30,15 @@ $age = (date("md", date("U", mktime(0, 0, 0, $birthDate[0], $birthDate[1], $birt
 <title>Mark Topper Diderichsen - marktopper.dk</title>
 <meta http-equiv="x-dns-prefetch-control" content="off">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script>
+	function age() { // birthday is a date
+		var birthday = new Date('1991-08-08');
+	    var ageDifMs = Date.now() - birthday.getTime();
+	    var ageDate = new Date(ageDifMs); // miliseconds from epoch
+	    return Math.abs(ageDate.getUTCFullYear() - 1970);
+	}
+</script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -78,7 +78,7 @@ $age = (date("md", date("U", mktime(0, 0, 0, $birthDate[0], $birthDate[1], $birt
 	-->
 
 Mit navn er Mark Topper Diderichsen.<br>
-Jeg er en <?php echo $age; ?> årig web-udvikler fra Danmark.<br>
+Jeg er en <script>document.write(age());</script> årig web-udvikler fra Danmark.<br>
 Jeg fokuserer på <a href="https://github.com/marktopper" class="blue" target="_blank">backend-udvikling</a>, og nyder dermed også at arbejde med sikkerhed & skallerbarhed.<br>
 I min fritid skriver jeg på min <a href="https://webman.io/blog/" class="green" target="_blank">blog</a> og holder mig opdateret på den nye teknologi.<br>
 Du kan se mine <a href="https://dribbble.com/webman" class="pink" target="_blank">motiver</a> og mine forrige <a href="https://webman.io/portfolio/" class="orange" target="_blank">projekter</a> i mit <a href="https://webman.io/resume.pdf" class="blue" target="_blank">CV</a>.<br>
@@ -88,7 +88,7 @@ Det var alt <a href="https://webman.io/about/" class="pink" target="_blank">om m
 </p>
 
 <a class="html5-logo animated bounceInUp" href="http://www.w3.org/html/logo/" target="_blank">
-	<p><img src="/img/html5-badge.png" width="63" height="64" alt="HTML5 Powered" title="HTML5 Powered"><span>Jeg har set <strong class="orange">fremtiden</strong>.<br>
+	<p><img src="img/html5-badge.png" width="63" height="64" alt="HTML5 Powered" title="HTML5 Powered"><span>Jeg har set <strong class="orange">fremtiden</strong>.<br>
 	  Det er i min <strong class="orange">browser</strong>!</span></p>
 </a>
 </div>
